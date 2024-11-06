@@ -1,0 +1,142 @@
+/* Resetando margens e paddings */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Estilo do corpo da aplicação */
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #a1c4fd, #c2e9fb); /* Gradiente suave de azul */
+  color: #333;
+  line-height: 1.6;
+  padding: 20px;
+  min-height: 100vh; /* Garante que o corpo ocupe a altura completa da tela */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Alinha os itens no topo da tela */
+  overflow-y: auto; /* Habilita rolagem vertical quando necessário */
+  flex-direction: column; /* Organiza a página verticalmente */
+}
+
+/* Título principal */
+h1 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+/* Container que envolve os componentes */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 1200px;
+  width: 100%;
+  margin-top: 20px; /* Adiciona margem superior para dar espaço */
+}
+
+/* Estilo dos componentes */
+.container > div {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  flex: 1 1 45%; /* Faz com que o componente ocupe 45% do container */
+  box-sizing: border-box;
+  transition: transform 0.3s ease;
+  min-width: 300px; /* Garante que o tamanho mínimo de cada componente seja 300px */
+}
+
+/* Efeito de hover nos componentes */
+.container > div:hover {
+  transform: translateY(-5px);
+}
+
+/* Estilo dos botões */
+button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Textarea */
+textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  resize: vertical;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  min-height: 120px; /* Definir um tamanho mínimo */
+}
+
+/* Erro */
+.error {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column; /* Organiza os componentes na vertical em telas menores */
+    align-items: center; /* Alinha os componentes no centro */
+  }
+
+  .container > div {
+    width: 90%; /* Faz os componentes ocuparem 90% da tela em dispositivos menores */
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    padding: 10px; /* Reduz o padding em telas pequenas */
+  }
+
+  h1 {
+    font-size: 1.5rem; /* Ajusta o tamanho do título */
+  }
+
+  button {
+    font-size: 0.9rem; /* Ajusta o tamanho do botão */
+  }
+
+  .container {
+    gap: 10px; /* Diminui o espaçamento entre os componentes */
+  }
+
+  .container > div {
+    width: 100%; /* Faz os componentes ocuparem 100% da tela */
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.2rem; /* Ajusta ainda mais o título */
+  }
+
+  textarea {
+    font-size: 0.9rem; /* Ajusta o tamanho da fonte na textarea */
+  }
+
+  button {
+    padding: 10px 16px; /* Ajusta o tamanho do botão */
+  }
+}
