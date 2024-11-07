@@ -1,6 +1,10 @@
 import React from 'react';
 import CsvToJson from './CsvToJson';
+import CsvToSql from './CsvToSql';
 import TextToMarkdown from './TextToMarkdown';
+import TextToPdf from './TextToPdf';  // Import the TextToPdf component
+
+
 import './App.css';  // Certifique-se de que o CSS está sendo importado
 
 
@@ -11,11 +15,14 @@ function App() {
         {/* Substituindo o título por uma imagem */}
       </header>
       
-      <h1>One Conversion</h1>
+      <h1>ConvertFy</h1>
       
       <div className="container">
         <CsvToJson />
-        <TextToMarkdown />
+        <TextToPdf />  {/* Add the TextToPdf component here */}
+        <CsvToSql/>
+
+        {/* <TextToMarkdown /> */}
       </div>
     </div>
   );
