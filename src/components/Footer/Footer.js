@@ -1,6 +1,9 @@
 import React from 'react';
 import { Button } from '../../globalStyles';
 import {
+  FaLinkedin
+} from 'react-icons/fa';
+import {
   FooterContainer,
   FooterSubscription,
   FooterSubText,
