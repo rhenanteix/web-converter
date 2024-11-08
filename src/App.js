@@ -1,30 +1,30 @@
 import React from 'react';
-import CsvToJson from './CsvToJson';
-import CsvToSql from './CsvToSql';
-import TextToMarkdown from './TextToMarkdown';
-import TextToPdf from './TextToPdf';  // Import the TextToPdf component
-
-
-import './App.css';  // Certifique-se de que o CSS está sendo importado
-
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom' 
+import GlobalStyles from './globalStyles'
+import { Navbar, Footer } from './components';
+import Home from './pages/HomePage/Home';
+import Services from './pages/Services/Services';
+import Products from './pages/Products/Products';
+import SignUp from './pages/SignUp/SignUp';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   return (
-    <div className="App">
-      <header>
-        {/* Substituindo o título por uma imagem */}
-      </header>
-      
-      <h1>ConvertFy</h1>
-      
-      <div className="container">
-        <CsvToJson />
-        <TextToPdf />  {/* Add the TextToPdf component here */}
-        <CsvToSql/>
-
-        {/* <TextToMarkdown /> */}
-      </div>
-    </div>
+    
+      <Router>
+          <GlobalStyles />
+          <ScrollToTop />
+          <Navbar />
+          <Switch>
+            <Route path='/' exact component={Home} />
+            <Route path='/services' component={Services} />
+            <Route path='/products' component={Products} />
+            <Route path='/sign-up' component={SignUp} />
+          </Switch>
+          <Footer />
+      </Router>
+        
+    
   );
 }
 

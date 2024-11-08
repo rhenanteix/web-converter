@@ -18,28 +18,30 @@ function CsvToSql() {
 
   const handleSubmit = async () => {
     try {
-      const response = await axios.post('https://teste-api-xyu9.shuttle.app/csv_to_sql', csvData, {
+      const response = await axios.post('http://127.0.0.1:8080/csv_to_sql', {
+        csv_data: csvData, // Wrap the CSV data in an object
+      }, {
         headers: {
-          'Content-Type': 'text/plain',
+          'Content-Type': 'application/json',
         },
-        responseType: 'blob', // Indica que a resposta será um blob (arquivo)
+        responseType: 'blob',
       });
-
-      // Criar um link temporário para download do arquivo SQL
+  
       const url = window.URL.createObjectURL(new Blob([response.data]));
       const link = document.createElement('a');
       link.href = url;
-      link.setAttribute('download', 'output.sql'); // Nome do arquivo para download
+      link.setAttribute('download', 'output.sql');
       document.body.appendChild(link);
       link.click();
       link.parentNode.removeChild(link);
-
+  
       setError(null);
     } catch (err) {
       console.error('Erro ao converter CSV para SQL:', err);
       setError('Erro ao converter CSV para SQL.');
     }
   };
+  
 
   return (
     <div className="section">

@@ -18,11 +18,13 @@ function CsvToJson() {
 
   const handleSubmit = async () => {
     try {
-      const response = await axios.post('https://teste-api-xyu9.shuttle.app/csv_to_json', csvData, {
+      const response = await axios.post('http://127.0.0.1:8080/csv_to_json', {
+        csv_data: csvData, // Wrap the CSV data in an object
+      }, {
         headers: {
-          'Content-Type': 'text/plain',
+          'Content-Type': 'application/json',
         },
-        responseType: 'blob', // Indica que a resposta será um blob (arquivo)
+        responseType: 'blob',
       });
 
       // Criar um link temporário para download do arquivo JSON
