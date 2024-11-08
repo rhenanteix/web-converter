@@ -1,13 +1,6 @@
 import React from 'react';
 import { Button } from '../../globalStyles';
 import {
-  FaFacebook,
-  FaInstagram,
-  FaYoutube,
-  FaTwitter,
-  FaLinkedin
-} from 'react-icons/fa';
-import {
   FooterContainer,
   FooterSubscription,
   FooterSubText,
@@ -57,13 +50,6 @@ function Footer() {
           </FooterLinkItems>
         </FooterLinksWrapper>
         <FooterLinksWrapper>
-          {/* <FooterLinkItems>
-            <FooterLinkTitle>Videos</FooterLinkTitle>
-            <FooterLink to='/'>Submit Video</FooterLink>
-            <FooterLink to='/'>Ambassadors</FooterLink>
-            <FooterLink to='/'>Agency</FooterLink>
-            <FooterLink to='/'>Influencer</FooterLink>
-          </FooterLinkItems> */}
           <FooterLinkItems>
             <FooterLinkTitle>Social Media</FooterLinkTitle>
             <FooterLink to='/'>LinkedIn</FooterLink>
