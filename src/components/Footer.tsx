@@ -13,7 +13,7 @@ export const Footer = () => {
             className="font-bold text-xl flex"
           >
             <LogoIcon />
-            Sem Nome ainda
+            DocShift
           </a>
         </div>
 
@@ -29,7 +29,7 @@ export const Footer = () => {
            // href="https://www.linkedin.com/in/leopoldo-miranda/"
             className="text-primary transition-all border-primary hover:border-b-2"
           >
-            Sem nome
+             DocShift
           </a>
         </h3>
       </section>
